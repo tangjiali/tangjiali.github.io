@@ -180,12 +180,12 @@ donates:
         # URL to the Patreon page
         url: ''
     # Paypal donate button configurations
-    -
-        type: paypal
-        # Paypal business ID or email address
-        business: ''
-        # Currency code
-        currency_code: USD
+    #-
+    #    type: paypal
+    #    # Paypal business ID or email address
+    #    business: ''
+    #    # Currency code
+    #    currency_code: USD
     # Wechat donate button configurations
     -
         type: wechat
