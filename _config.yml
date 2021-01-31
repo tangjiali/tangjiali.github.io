@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Icarus
+title: 齐简笔记
 subtitle:
-description: Hexo theme - Icarus
-author: PPOffice
+description: 在齐太史简，在晋董狐笔。
+author: 齐简
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.zhangruipeng.me/hexo-theme-icarus/
+url: http://tangjiali.github.io/
 root: /
 permalink: :category/:post_title/
 permalink_defaults:
@@ -85,7 +85,7 @@ theme: icarus
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/ppoffice/hexo-theme-icarus.git
+  repository: https://github.com/tangjiali/tangjiali.github.io.git
   branch: gh-pages
 
 marked:
@@ -98,3 +98,6 @@ algolia:
   applicationID: T0CJF4ZB1O
   apiKey: bcbeb94d417749ab5c65b082fce32333
   indexName: hexo-icarus
+
+article:
+  thumbnail: true

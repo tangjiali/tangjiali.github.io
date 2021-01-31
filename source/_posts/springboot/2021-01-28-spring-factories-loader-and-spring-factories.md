@@ -1,5 +1,6 @@
 ---
 title: SpringFactoriesLoader与spring.factories
+date: 2021-01-28
 tag: 
     - SpringBoot
     - Java
@@ -7,6 +8,7 @@ tag:
     - SpringApplicationRunListener
 categories: 
     - SpringBoot源码分析
+thumbnail: /imgs/illustration/2020-01-28-spring-factories-loader-and-spring-factories.svg
 ---
 
 # 获取SpringApplicationRunListeners

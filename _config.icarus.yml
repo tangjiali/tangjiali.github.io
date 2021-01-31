@@ -3,7 +3,8 @@ version: 4.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/logo.svg
+logo: 
+    text: 齐简笔记
 # Page metadata configurations
 head:
     # URL or path to the website's icon
@@ -155,30 +156,30 @@ search:
 comment:
     type: disqus
     # Disqus shortname
-    shortname: ''
+    shortname: 'who'
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
 donates:
     # "Afdian.net" donate button configurations
-    -
-        type: afdian
-        # URL to the "Afdian.net" personal page
-        url: ''
+    #-
+    #    type: afdian
+    #    # URL to the "Afdian.net" personal page
+    #    url: ''
     # Alipay donate button configurations
     -
         type: alipay
         # Alipay qrcode image URL
-        qrcode: ''
+        qrcode: '/imgs/alipay.jpg'
     # "Buy me a coffee" donate button configurations
-    -
-        type: buymeacoffee
-        # URL to the "Buy me a coffee" page
-        url: ''
+    #-
+    #    type: buymeacoffee
+    #    # URL to the "Buy me a coffee" page
+    #    url: ''
     # Patreon donate button configurations
-    -
-        type: patreon
-        # URL to the Patreon page
-        url: ''
+    #-
+    #    type: patreon
+    #    # URL to the Patreon page
+    #    url: ''
     # Paypal donate button configurations
     #-
     #    type: paypal
@@ -190,7 +191,7 @@ donates:
     -
         type: wechat
         # Wechat qrcode image URL
-        qrcode: ''
+        qrcode: '/imgs/wepay.png'
 # Share plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/
 share:
@@ -384,8 +385,8 @@ plugins:
 # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/speed-up-your-site-with-custom-cdn/
 providers:
     # Name or URL template of the JavaScript and/or stylesheet CDN provider
-    cdn: jsdelivr
+    cdn: loli
     # Name or URL template of the webfont CDN provider
-    fontcdn: google
+    fontcdn: loli
     # Name or URL of the fontawesome icon font CDN provider
-    iconcdn: fontawesome
+    iconcdn: loli

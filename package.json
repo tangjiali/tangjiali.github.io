@@ -24,7 +24,9 @@
     "hexo-renderer-marked": "^3.0.0",
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
+    "hexo-tag-plantuml": "^1.0.0",
     "hexo-theme-landscape": "^0.0.3",
-    "icarus": "^0.2.0-alpha"
+    "icarus": "^0.2.0-alpha",
+    " hexo-tag-plantuml": "^1.0.0"
   }
 }
