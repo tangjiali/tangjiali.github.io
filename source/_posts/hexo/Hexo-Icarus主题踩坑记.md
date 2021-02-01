@@ -8,9 +8,7 @@ tag:
 categories:
     - Hexo
         - 主题
-image:
-    - "http://localhost:4000/imgs/illustration/2020-01-30-icarus-fq.jpg"
-thumbnail: "/imgs/illustration/2020-01-30-icarus-fq.jpg" 
+thumbnail: /imgs/illustration/Hexo-Icarus主题踩坑记.jpg
 ---
 
 # 性能优化

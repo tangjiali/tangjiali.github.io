@@ -11,7 +11,7 @@ tag:
     - SpringFactoriesLoader
     - spring.factories
     - SPI
-thumbnail: /imgs/illustration/100-SpringFactoriesLoader.svg
+thumbnail: /imgs/illustration/2020-01-28-spring-factories-loader-and-spring-factories.svg
 ---
 
 # SpringFactoriesLoader类注释
@@ -47,14 +47,14 @@ example.MyService=example.MyServiceImpl1,example.MyServiceImpl2
     }
 {% endplantuml %}
 
-## 构造方法-`SpringFactoriesLoader`
+## 构造方法-SpringFactoriesLoader
 
 `SpringFactoriesLoader`的定位是一个工具类，不需要实例化。为此，SpringBoot做了两件事来防止实例化`SpringFactoriesLoader`类：
 
 1. 构造方法私有化，`SpringFactoriesLoader`类唯一的构造方法使用类`private`修饰符，这意味着外部是无法直接通过构造方法创建它的实例，也不能通过反射来创建实例。
 2. final修饰符，`SpringFactoriesLoader`类本身使用了`final`修饰符，因此它是不能被其他类继承，也就不会通过创建子类实例来使用它的能力。
 
-## 实例化工厂-`instantiateFactory`
+## 实例化工厂-instantiateFactory
 
 `instanticateFactory`方法签名如下：
 ```java
@@ -216,4 +216,71 @@ ServiceLoad<MyInterface> myIntfs = ServiceLoader.load(MyInterface.class);
 for(MyInterface myIntf : myIntfs) {
     myIntf.doSomething();
 }
+```
+
+# 附录
+
+## spring-boot.jar下的spring.factories
+
+```properties
+# PropertySource Loaders
+org.springframework.boot.env.PropertySourceLoader=\
+org.springframework.boot.env.PropertiesPropertySourceLoader,\
+org.springframework.boot.env.YamlPropertySourceLoader
+
+# Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+org.springframework.boot.context.event.EventPublishingRunListener
+
+# Error Reporters
+org.springframework.boot.SpringBootExceptionReporter=\
+org.springframework.boot.diagnostics.FailureAnalyzers
+
+# Application Context Initializers
+org.springframework.context.ApplicationContextInitializer=\
+org.springframework.boot.context.ConfigurationWarningsApplicationContextInitializer,\
+org.springframework.boot.context.ContextIdApplicationContextInitializer,\
+org.springframework.boot.context.config.DelegatingApplicationContextInitializer,\
+org.springframework.boot.rsocket.context.RSocketPortInfoApplicationContextInitializer,\
+org.springframework.boot.web.context.ServerPortInfoApplicationContextInitializer
+
+# Application Listeners
+org.springframework.context.ApplicationListener=\
+org.springframework.boot.ClearCachesApplicationListener,\
+org.springframework.boot.builder.ParentContextCloserApplicationListener,\
+org.springframework.boot.cloud.CloudFoundryVcapEnvironmentPostProcessor,\
+org.springframework.boot.context.FileEncodingApplicationListener,\
+org.springframework.boot.context.config.AnsiOutputApplicationListener,\
+org.springframework.boot.context.config.ConfigFileApplicationListener,\
+org.springframework.boot.context.config.DelegatingApplicationListener,\
+org.springframework.boot.context.logging.ClasspathLoggingApplicationListener,\
+org.springframework.boot.context.logging.LoggingApplicationListener,\
+org.springframework.boot.liquibase.LiquibaseServiceLocatorApplicationListener
+
+# Environment Post Processors
+org.springframework.boot.env.EnvironmentPostProcessor=\
+org.springframework.boot.cloud.CloudFoundryVcapEnvironmentPostProcessor,\
+org.springframework.boot.env.SpringApplicationJsonEnvironmentPostProcessor,\
+org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor,\
+org.springframework.boot.reactor.DebugAgentEnvironmentPostProcessor
+
+# Failure Analyzers
+org.springframework.boot.diagnostics.FailureAnalyzer=\
+org.springframework.boot.diagnostics.analyzer.BeanCurrentlyInCreationFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.BeanDefinitionOverrideFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.BeanNotOfRequiredTypeFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.BindFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.BindValidationFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.UnboundConfigurationPropertyFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.ConnectorStartFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.NoSuchMethodFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.NoUniqueBeanDefinitionFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.PortInUseFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.ValidationExceptionFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.InvalidConfigurationPropertyNameFailureAnalyzer,\
+org.springframework.boot.diagnostics.analyzer.InvalidConfigurationPropertyValueFailureAnalyzer
+
+# FailureAnalysisReporters
+org.springframework.boot.diagnostics.FailureAnalysisReporter=\
+org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter
 ```
