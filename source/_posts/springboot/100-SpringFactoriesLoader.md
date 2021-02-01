@@ -1,6 +1,7 @@
 ---
 title: 基础篇：SpringBoot的SPI——SpringFactoriesLoader
 date: 2021-01-31 22:18:00
+toc: true
 categories:
     - SpringBoot源码阅读
         - 基础篇
