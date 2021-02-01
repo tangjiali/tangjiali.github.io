@@ -11502,6 +11502,7 @@ figure.highlight .section {
     z-index: 100;
     max-height: calc(100vh - 2rem);
     overflow-y: auto;
+    color: #f00;
   }
   #toc-mask {
     display: none;
